@@ -8,6 +8,10 @@ import javax.persistence.Id;
 public class Material {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    private Long id;
+
     @Column
     private String name;
 }

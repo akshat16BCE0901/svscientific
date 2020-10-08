@@ -6,7 +6,9 @@ import javax.persistence.*;
 public class Make {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
     private Long id;
+    
     @Column
     private String name;
 

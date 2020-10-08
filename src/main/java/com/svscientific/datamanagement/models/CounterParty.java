@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 public class CounterParty {
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 

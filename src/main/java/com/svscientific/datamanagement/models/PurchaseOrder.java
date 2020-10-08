@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Quantity {
+public class PurchaseOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,7 +14,4 @@ public class Quantity {
 
     @Column
     private String name;
-
-    @Column
-    private String abbreviation;
 }
