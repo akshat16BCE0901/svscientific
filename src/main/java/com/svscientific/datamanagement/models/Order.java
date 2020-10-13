@@ -10,15 +10,12 @@ public class Order {
     @Column
     private Long id;
 
-    @Column
     @OneToOne
     private Material material;
 
-    @Column
     @OneToOne
     private Quantity quantity;
 
-    @Column
     @OneToOne
     private Make make;
 

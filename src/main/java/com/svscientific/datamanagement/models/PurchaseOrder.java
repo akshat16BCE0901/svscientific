@@ -22,7 +22,6 @@ public class PurchaseOrder {
     @Column
     private Date insertedDate;
 
-    @Column
     @OneToOne
     private CounterParty counterParty;
 
