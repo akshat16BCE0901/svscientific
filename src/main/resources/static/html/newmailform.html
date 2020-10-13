@@ -1,0 +1,58 @@
+<div class="container-fluid mt-2" ng-app="myapp">
+    <div class="row">
+        <div class="col-md-12 bg-light" style="border-radius: 10px;">
+            <form class="form-horizontal" action="/action_page.php">
+                <div class="form-group row">
+                    <label class="control-label col-sm-1" for="email">To:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email" placeholder="TO">
+                    </div>
+                    <a class="col-sm-1" style="cursor: pointer;" id="addcc">Add Cc</a>
+                </div>
+                <div class="form-group row" id="ccdiv">
+                    <label class="control-label col-sm-1" for="cc">CC:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cc" placeholder="CC">
+                    </div>
+                    <a class="col-sm-1" style="cursor: pointer;" id="addbcc">Add Bcc</a>
+                </div>
+                <div class="form-group row" id="bccdiv">
+                    <label class="control-label col-sm-1" for="bcc">BCC:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="bcc" placeholder="BCC">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-sm-1" for="subject">Subject:</label>
+                    <div class="col-sm-11">
+                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-12">
+            <label class="control-label col-sm-1" for="subject">Body:</label>
+            <div id="editor" style="height: 400px;"></div>
+        </div>
+        <div class="col-md-12 mt-2">
+            <button class="btn btn-primary btn-md">Send</button>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#quotationTable").DataTable();
+            var quill = new Quill('#editor',{
+                theme : 'snow'
+            });
+            $("#ccdiv").hide();
+            $("#bccdiv").hide();
+            $("#addcc").on("click",function(){
+                $("#ccdiv").toggle();
+            });
+            $("#addbcc").on("click",function(){
+                $("#bccdiv").toggle();
+            });
+        });
+    </script>
+</html>

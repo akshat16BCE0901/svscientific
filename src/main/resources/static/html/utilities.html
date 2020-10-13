@@ -1,0 +1,77 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Add new Counterparty</h2>
+            <form style="border: 2px solid black;" class="form table-responsive">
+                <table class="table table-hover table-striped table-bordered">
+                    <tr>
+                        <td>Enter Name</td>
+                        <td><input type="text" class="form-control" ng-model="counterpartyName" placeholder="Enter Party Name" /></td>
+                    </tr>
+                    <tr>
+                        <td>Enter Email</td>
+                        <td><input type="email" class="form-control" ng-model="counterpartyEmail" placeholder="Enter Party Email" /></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><button type="button" ng-click="addNewCounterParty()" class="btn btn-md btn-primary">Submit</button></td>
+                        <td class="text-center"><button type="button" class="btn btn-md btn-danger">Reset</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">Add new Quantity</h2>
+            <form class="form table-responsive"  style="border: 2px solid black;">
+                <table class="table table-hover table-striped table-bordered">
+                    <tr>
+                        <td>Enter Quantity Name</td>
+                        <td><input type="text" class="form-control" ng-model="quantityName" placeholder="Ex: Kilogram, Litres, Millilitres etc" /></td>
+                    </tr>
+                    <tr>
+                        <td>Enter abbreviation</td>
+                        <td><input type="text" class="form-control" ng-model="abbreviation" placeholder="Ex: Kg, L, ml etc" /></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><button type="button" ng-click="addNewQuantity()" class="btn btn-md btn-primary">Submit</button></td>
+                        <td class="text-center"><button type="reset" class="btn btn-md btn-danger">Reset</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Add new Material</h2>
+            <form style="border: 2px solid black;" class="form table-responsive">
+                <table class="table table-hover table-striped table-bordered">
+                    <tr>
+                        <td>Enter Name</td>
+                        <td><input type="text"  ng-model="materialName" class="form-control" placeholder="Ex: Beaker, Potaasium Sulphate, etc" /></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center"><button type="button" ng-click="addNewMaterial()" class="btn btn-md btn-primary">Submit</button></td>
+                        <td class="text-center"><button type="reset" class="btn btn-md btn-danger">Reset</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">Add new Make</h2>
+            <form class="form table-responsive"  style="border: 2px solid black;">
+                <table class="table table-hover table-striped table-bordered">
+                    <tr>
+                        <td>Enter Make Name</td>
+                        <td><input type="text" ng-model="makeName" class="form-control" placeholder="Enter Make name" /></td>
+                        {{console.log(makename)}}
+                    </tr>
+                    <tr>
+                        <td class="text-center"><button type="button" ng-click="addNewMake()" class="btn btn-md btn-primary">Submit</button></td>
+                        <td class="text-center"><button type="reset" class="btn btn-md btn-danger">Reset</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    {{content}}
+</div>

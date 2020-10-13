@@ -1,0 +1,80 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">All Counterparties</h2>
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in allCounterParties">
+                        <td>{{x.id}}</td>
+                        <td>{{x.name}}</td>
+                        <td>{{x.email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">All quantities</h2>
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Abbreviation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in allQuantities">
+                        <td>{{x.id}}</td>
+                        <td>{{x.name}}</td>
+                        <td>{{x.abbreviation}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">All Materials</h2>
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in allMaterials">
+                        <td>{{x.id}}</td>
+                        <td>{{x.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">All Makes</h2>
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in allMakes">
+                        <td>{{x.id}}</td>
+                        <td>{{x.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{content}}
+</div>

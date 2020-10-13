@@ -1,0 +1,84 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 table-responsive">
+            <h2 class="text-center">Add new Quotation</h2>
+            <table id="newquotation" style="border: 2px solid black;" class="text-center table table-striped table-hover">
+                <tr>
+                    <td>Quotation ID</td>
+                    <td><input class="form-control" type="text" id="quotationid" placeholder="Enter Quotation ID" /></td>
+                </tr>
+                <tr>
+                    <td>Counterparty Name</td>
+                    <td><select class="form-control" name="ctrpty" id="counterpartyname">
+                        <option selected disabled>-- Select Counterparty Name --</option>
+                        <option value="Daurala Organics">Daurala Organics</option>
+                        <option value="ABC trading company">ABC Trading Co.</option>
+                        <option value="DEF trading company">DEF Trading Co.</option>
+                        <option value="GHI trading company">GHI Trading Co.</option>
+                        <option value="JKL trading company">JKL Trading Co.</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Material Type</td>
+                    <td>
+                        <select class="form-control" name="materialtype" id="materialtype">
+                            <option selected disabled>-- Select Material Type --</option>
+                            <option value="chemicals">Chemicals</option>
+                            <option value="Labwares ">Labwares</option>
+                            <option value="medical equipment">Medical Equipments</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Material Name</td>
+                    <td>
+                        <select class="form-control" name="materialname" id="materialname">
+                            <option selected disabled>-- Select Material --</option>
+                            <option value="beaker">Beaker</option>
+                            <option value="potassium sulphate">Potassium Sulphate</option>
+                            <option value="oxymeter">Oxymeter</option>
+                            <option value="thermometer">Thermometer</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td><input class="form-control" type="number" id="quantity" placeholder="Enter quantity" step="0.1" /></td>
+                </tr>
+                <tr>
+                    <td>Unit of Measurement</td>
+                    <td>
+                        <select class="form-control" name="unitofmeasurement" id="unitofmeasurement">
+                            <option selected disabled>-- Select Unit --</option>
+                            <option value="units">Units(Number of pieces)</option>
+                            <option value="litres">litres (l)</option>
+                            <option value="kilograms">kilograms (kg)</option>
+                            <option value="millilitres">millilitres (ml)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Entry Date</td>
+                    <td><input class="form-control disabled" disabled type="date" id="entrydate" value="2020-10-04" /></td>
+                </tr>
+                <tr>
+                    <td>Follow up date</td>
+                    <td><input class="form-control" type="date" id="followupdate"/></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><button type="button" class="btn btn-md btn-primary">Submit</button></td>
+                    <td class="text-center"><button type="button" class="btn btn-md btn-danger">Reset</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+        
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#quotationTable").DataTable();
+        });
+    </script>
+</html>

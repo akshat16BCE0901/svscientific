@@ -1,0 +1,50 @@
+<div class="container-fluid mt-4 p-2">
+    <div class="row">
+        <div class="col-md-12 table-responsive">
+            <table id="quotationsreplytable" class="text-center table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Quotation ID</th>
+                        <th>Reply received</th>
+                        <th>Reply Date</th>
+                        <th>Reply Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>SV01102020</td>
+                        <td class="text-success">Yes</td>
+                        <td>03-October-2020</td>
+                        <td>02:35 PM</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-sm btn-primary">View</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>SV02102020</td>
+                        <td class="text-danger">No</td>
+                        <td>---</td>
+                        <td>---</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn disabled btn-sm btn-primary">View</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#quotationsreplytable").DataTable();
+        });
+    </script>
+</html>

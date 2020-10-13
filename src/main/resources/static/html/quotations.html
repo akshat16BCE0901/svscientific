@@ -1,0 +1,44 @@
+<div class="container-fluid mt-4 p-2">
+    <div class="row">
+        <div class="col-md-12 table-responsive">
+            <table id="quotationTable" datatable="" class="text-center table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Quotation ID</th>
+                        <th>Counterparty Name</th>
+                        <th>Material Name</th>
+                        <th>Quantity</th>
+                        <th>Unit of measurement</th>
+                        <th>Entry Date</th>
+                        <th>Follow Up Date</th>
+                        <th>Completed</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="quotation in quotations">
+                        <td>{{quotation.id}}</td>
+                        <td>{{quotation.quotId}}</td>
+                        <td>{{quotation.ctrptyname}}</td>
+                        <td>{{quotation.materialName}}</td>
+                        <td>{{quotation.quantity}}</td>
+                        <td>{{quotation.unitOfMeasurement}}</td>
+                        <td>{{quotation.entryDate}}</td>
+                        <td>{{quotation.followUpDate}}</td>
+                        <td>
+                            <p ng-if="quotation.completed=='Yes'" class="text-success">Yes</p>
+                            <p ng-if="quotation.completed=='No'" class="text-danger">No</p>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-sm btn-primary">Edit</button>
+                                <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

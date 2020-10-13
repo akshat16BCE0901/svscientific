@@ -26,7 +26,9 @@ public class UtilitiesService {
     @Autowired private QuantityRepository quantityRepository;
 
     public List<Make> getAllMakes(){
-        return makeRepository.findAll();
+        List<Make> allMakes = makeRepository.findAll();
+        logger.info("All Makes are == {}",allMakes.toString());
+        return allMakes;
     }
 
     public void insertMake(Make make){
@@ -39,38 +41,47 @@ public class UtilitiesService {
     }
 
     public List<Material> getAllMaterials(){
-        return materialRepository.findAll();
+        List<Material> materialList = materialRepository.findAll();
+        logger.info("All Materials are == {}",materialList.toString());
+        return materialList;
     }
 
     public void insertMaterial(Material material){
         try{
             materialRepository.save(material);
+            logger.info("Material inserted successfully");
         }catch (Exception e ){
             logger.error("Error inserting Material {} with exception {}",material.toString(),e.getLocalizedMessage());
         }
     }
 
     public List<Quantity> getAllQuantities(){
-        return quantityRepository.findAll();
+        List<Quantity> allQuantities = quantityRepository.findAll();
+        logger.info("All Quantities are == {}",allQuantities.toString());
+        return allQuantities;
     }
 
     public void insertQuantity(Quantity quantity){
         try{
             quantityRepository.save(quantity);
+            logger.info("Quantity inserted successfully");
         }catch (Exception e ){
             logger.error("Error inserting Quantity {} with exception {}",quantity.toString(),e.getLocalizedMessage());
         }
     }
 
     public List<CounterParty> getAllCounterParties(){
-        return counterPartyRepository.findAll();
+        List<CounterParty> allCounterParties = counterPartyRepository.findAll();
+        logger.info("All Counterparties are == {}",allCounterParties.toString());
+        return allCounterParties;
     }
 
     public void insertCounterParty(CounterParty counterParty){
         try{
             counterPartyRepository.save(counterParty);
+            logger.info("CounterParty inserted successfully");
         }catch (Exception e ){
-            logger.error("Error inserting Make {} with exception {}",counterParty.toString(),e.getLocalizedMessage());
+            logger.error("Error inserting CounterParty {} with exception {}",counterParty.toString(),e.getLocalizedMessage());
         }
     }
 }
