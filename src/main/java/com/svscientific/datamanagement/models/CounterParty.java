@@ -3,6 +3,7 @@ package com.svscientific.datamanagement.models;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "`counterparty`")
 public class CounterParty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
