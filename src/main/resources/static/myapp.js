@@ -10,42 +10,42 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
         })
         .state('quotations',{
             url : '/quotations',
-            templateUrl : '/html/quotations.html',
+            templateUrl : 'html/quotations.html',
             controller : "QuotationController"
         })
         .state('emails',{
             url : '/emails',
-            templateUrl : '/html/emails.html',
+            templateUrl : 'html/emails.html',
             controller : 'EmailController'
         })
         .state('newmailform',{
             url : '/newmailform',
-            templateUrl : '/html/newmailform.html',
+            templateUrl : 'html/newmailform.html',
             controller : 'NewEmailController'
         })
         .state('viewallpurchaseorders',{
             url : '/viewallpurchaseorders',
-            templateUrl : '/html/viewallpurchaseorders.html',
+            templateUrl : 'html/viewallpurchaseorders.html',
             controller : 'PurchaseOrderController'
         })
         .state('addnewpurchaseorder',{
             url : '/addnewpurchaseorder',
-            templateUrl : '/html/addnewpurchaseorder.html',
+            templateUrl : 'html/addnewpurchaseorder.html',
             controller : 'PurchaseOrderController'
         })
         .state('updatepurchaseorder',{
             url : '/updatepurchaseorder',
-            templateUrl : '/html/updatepurchaseorder.html',
+            templateUrl : 'html/updatepurchaseorder.html',
             controller : 'PurchaseOrderController'
         })
         .state('utilities',{
             url : '/utilities',
-            templateUrl : '/html/utilities.html',
+            templateUrl : 'html/utilities.html',
             controller : 'UtilitiesController'
         })
         .state('viewallutilities',{
             url : '/viewallutilities',
-            templateUrl : '/html/viewallutilities.html',
+            templateUrl : 'html/viewallutilities.html',
             controller : 'UtilitiesController'
         });
         
