@@ -9,4 +9,4 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     }
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
-myapp.controller("PurchaseOrderController",purchaseOrder);
+myapp.controller("PurchaseOrderController",PurchaseOrderController);
