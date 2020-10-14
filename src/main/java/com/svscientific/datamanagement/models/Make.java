@@ -5,8 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Make {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @Column
