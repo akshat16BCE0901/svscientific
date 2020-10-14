@@ -3,47 +3,47 @@ var myapp = angular.module("myapp",["ui.router"]);
 myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
 
     $stateProvider
-        .state('Home',{
+        .state('home',{
             url : '/home',
             template : '<h1>abc</h1>',
             controller : "HomeCtrl"
         })
-        .state('Quotations',{
+        .state('quotations',{
             url : '/quotations',
             templateUrl : '/html/quotations.html',
             controller : "QuotationController"
         })
-        .state('Emails',{
+        .state('emails',{
             url : '/emails',
             templateUrl : '/html/emails.html',
             controller : 'EmailController'
         })
-        .state('Reminders',{
+        .state('newmailform',{
             url : '/newmailform',
             templateUrl : '/html/newmailform.html',
             controller : 'NewEmailController'
         })
-        .state('View Purchase Order',{
+        .state('viewallpurchaseorders',{
             url : '/viewallpurchaseorders',
             templateUrl : '/html/viewallpurchaseorders.html',
             controller : 'PurchaseOrderController'
         })
-        .state('Add Purchase Order',{
+        .state('addnewpurchaseorder',{
             url : '/addnewpurchaseorder',
             templateUrl : '/html/addnewpurchaseorder.html',
             controller : 'PurchaseOrderController'
         })
-        .state('Update Purchase Order',{
+        .state('updatepurchaseorder',{
             url : '/updatepurchaseorder',
             templateUrl : '/html/updatepurchaseorder.html',
             controller : 'PurchaseOrderController'
         })
-        .state('Add New Utility',{
+        .state('utilities',{
             url : '/utilities',
             templateUrl : '/html/utilities.html',
             controller : 'UtilitiesController'
         })
-        .state('View All Utilities',{
+        .state('viewallutilities',{
             url : '/viewallutilities',
             templateUrl : '/html/viewallutilities.html',
             controller : 'UtilitiesController'
