@@ -4,47 +4,47 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
 
     $stateProvider
         .state('Home',{
-            url : '/home/',
+            url : '/home',
             template : '<h1>abc</h1>',
             controller : "HomeCtrl"
         })
         .state('Quotations',{
-            url : '/quotations/',
+            url : '/quotations',
             templateUrl : '/html/quotations.html',
             controller : "QuotationController"
         })
         .state('Emails',{
-            url : '/emails/',
+            url : '/emails',
             templateUrl : '/html/emails.html',
             controller : 'EmailController'
         })
         .state('Reminders',{
-            url : '/newmailform/',
+            url : '/newmailform',
             templateUrl : '/html/newmailform.html',
             controller : 'NewEmailController'
         })
         .state('View Purchase Order',{
-            url : '/viewallpurchaseorders/',
+            url : '/viewallpurchaseorders',
             templateUrl : '/html/viewallpurchaseorders.html',
             controller : 'PurchaseOrderController'
         })
         .state('Add Purchase Order',{
-            url : '/addnewpurchaseorder/',
+            url : '/addnewpurchaseorder',
             templateUrl : '/html/addnewpurchaseorder.html',
             controller : 'PurchaseOrderController'
         })
         .state('Update Purchase Order',{
-            url : '/updatepurchaseorder/',
+            url : '/updatepurchaseorder',
             templateUrl : '/html/updatepurchaseorder.html',
             controller : 'PurchaseOrderController'
         })
         .state('Add New Utility',{
-            url : '/utilities/',
+            url : '/utilities',
             templateUrl : '/html/utilities.html',
             controller : 'UtilitiesController'
         })
         .state('View All Utilities',{
-            url : '/viewallutilities/',
+            url : '/viewallutilities',
             templateUrl : '/html/viewallutilities.html',
             controller : 'UtilitiesController'
         });
