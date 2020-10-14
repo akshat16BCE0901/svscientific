@@ -16,7 +16,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/quotations',
             views : {
                 'quotations' : {
-                    templateUrl : 'html/quotations.html',
+                    templateUrl : 'quotations.html',
                     controller : "QuotationController"
                 }
             }
@@ -25,7 +25,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/emails',
             views : {
                 'emails' : {
-                    templateUrl : 'html/emails.html',
+                    templateUrl : 'emails.html',
                     controller : 'EmailController'
                     
                 }
@@ -35,7 +35,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/newmailform',
             views : {
                 'newmailform' : {
-                    templateUrl : 'html/newmailform.html',
+                    templateUrl : 'newmailform.html',
                     controller : 'NewEmailController'
                     
                 }
@@ -45,7 +45,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/viewallpurchaseorders',
             views : {
                 'viewallpurchaseorders' : {
-                    templateUrl : 'html/viewallpurchaseorders.html',
+                    templateUrl : 'viewallpurchaseorders.html',
                     controller : 'PurchaseOrderController'
                     
                 }
@@ -55,7 +55,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/addnewpurchaseorder',
             views : {
                 'addnewpurchaseorder' : {
-                    templateUrl : 'html/addnewpurchaseorder.html',
+                    templateUrl : 'addnewpurchaseorder.html',
                     controller : 'PurchaseOrderController'
                     
                 }
@@ -65,7 +65,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/updatepurchaseorder',
             views : {
                 'updatepurchaseorder' : {
-                    templateUrl : 'html/updatepurchaseorder.html',
+                    templateUrl : 'updatepurchaseorder.html',
                     controller : 'PurchaseOrderController'
                     
                 }
@@ -75,7 +75,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/utilities',
             views : {
                 'utilities' : {
-                    templateUrl : 'html/utilities.html',
+                    templateUrl : 'utilities.html',
                     controller : 'UtilitiesController'
                     
                 }
@@ -85,7 +85,7 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
             url : '/viewallutilities',
             views : {
                 'viewallutilities' : {
-                    templateUrl : 'html/viewallutilities.html',
+                    templateUrl : 'viewallutilities.html',
                     controller : 'UtilitiesController'
 
                 }
