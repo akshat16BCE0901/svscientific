@@ -5,48 +5,91 @@ myapp.config(function($stateProvider,$locationProvider,$urlRouterProvider){
     $stateProvider
         .state('home',{
             url : '/home',
-            template : '<h1>abc</h1>',
-            controller : "HomeCtrl"
+            views : {
+                'home' : {
+                    template : '<h1>abc</h1>',
+                    controller : "HomeCtrl"
+                }
+            }
         })
         .state('quotations',{
             url : '/quotations',
-            templateUrl : 'html/quotations.html',
-            controller : "QuotationController"
+            views : {
+                'quotations' : {
+                    templateUrl : 'html/quotations.html',
+                    controller : "QuotationController"
+                }
+            }
         })
         .state('emails',{
             url : '/emails',
-            templateUrl : 'html/emails.html',
-            controller : 'EmailController'
+            views : {
+                'emails' : {
+                    templateUrl : 'html/emails.html',
+                    controller : 'EmailController'
+                    
+                }
+            }
         })
         .state('newmailform',{
             url : '/newmailform',
-            templateUrl : 'html/newmailform.html',
-            controller : 'NewEmailController'
+            views : {
+                'newmailform' : {
+                    templateUrl : 'html/newmailform.html',
+                    controller : 'NewEmailController'
+                    
+                }
+            }
         })
         .state('viewallpurchaseorders',{
             url : '/viewallpurchaseorders',
-            templateUrl : 'html/viewallpurchaseorders.html',
-            controller : 'PurchaseOrderController'
+            views : {
+                'viewallpurchaseorders' : {
+                    templateUrl : 'html/viewallpurchaseorders.html',
+                    controller : 'PurchaseOrderController'
+                    
+                }
+            }
         })
         .state('addnewpurchaseorder',{
             url : '/addnewpurchaseorder',
-            templateUrl : 'html/addnewpurchaseorder.html',
-            controller : 'PurchaseOrderController'
+            views : {
+                'addnewpurchaseorder' : {
+                    templateUrl : 'html/addnewpurchaseorder.html',
+                    controller : 'PurchaseOrderController'
+                    
+                }
+            }
         })
         .state('updatepurchaseorder',{
             url : '/updatepurchaseorder',
-            templateUrl : 'html/updatepurchaseorder.html',
-            controller : 'PurchaseOrderController'
+            views : {
+                'updatepurchaseorder' : {
+                    templateUrl : 'html/updatepurchaseorder.html',
+                    controller : 'PurchaseOrderController'
+                    
+                }
+            }
         })
         .state('utilities',{
             url : '/utilities',
-            templateUrl : 'html/utilities.html',
-            controller : 'UtilitiesController'
+            views : {
+                'utilities' : {
+                    templateUrl : 'html/utilities.html',
+                    controller : 'UtilitiesController'
+                    
+                }
+            }
         })
         .state('viewallutilities',{
             url : '/viewallutilities',
-            templateUrl : 'html/viewallutilities.html',
-            controller : 'UtilitiesController'
+            views : {
+                'viewallutilities' : {
+                    templateUrl : 'html/viewallutilities.html',
+                    controller : 'UtilitiesController'
+
+                }
+            }
         });
         
     $urlRouterProvider.otherwise("/home");
