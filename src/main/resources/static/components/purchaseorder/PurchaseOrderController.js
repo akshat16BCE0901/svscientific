@@ -12,9 +12,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         for(var i=0;i<$scope.numrows;i++){
             $scope.rows.push("a");
         }
-        for(var i=0;i<$scope.numrows;i++){
-            $scope.addRowTo()
-        }
         PurchaseOrderService.addNewPurchaseOrder();
     }
     $scope.listAllMakes = function(){
