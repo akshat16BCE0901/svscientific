@@ -24,7 +24,7 @@
                     <td>Add row for material entry</td>
                     <td><input min="0" class="form-control" type="number" ng-model="numrows" id="quantity" style="display: inline-block;width: 70%;" placeholder="Number of rows to add" step="1" />&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-sm" style="display: inline-block;width: 25%;" ng-click="addRows()" ng-hide="numrows==0" >Add {{numrows}} rows</button></td>
                 </tr>
-                <tr ng-repeat="x in rows track by $index">
+                <tr>
                     <td colspan="2">{{x}}</td>
                 </tr>
                 <tr>
