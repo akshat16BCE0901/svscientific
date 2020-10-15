@@ -17,7 +17,7 @@
                         <option value="DEF trading company">DEF Trading Co.</option>
                         <option value="GHI trading company">GHI Trading Co.</option>
                         <option value="JKL trading company">JKL Trading Co.</option>
-                        <option ng-repeat="x in allCounterParties" ng-value="{{x}}">{{x.name}} - {{x.email}}</option>
+                        <option ng-repeat="x in allCounterParties track by $index" ng-value="{{x}}">{{x.name}} - {{x.email}}</option>
                     </select></td>
                 </tr>
                 <tr>
