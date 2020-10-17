@@ -11,6 +11,7 @@ var utilities = function($scope,UtilitiesService){
     $scope.abbreviation = "";
     $scope.counterpartyName = "";
     $scope.counterpartyEmail = "";
+    var jq = $.noConflict();
 
     $scope.listAllMakes = function(){
         UtilitiesService.listAllMakes().then(function(httpData){
@@ -116,14 +117,15 @@ var utilities = function($scope,UtilitiesService){
         });
     }
 
+    $scope.initial = function(){
+        jq('.datatable-class').DataTable();
+    }
+
     $scope.listAllMakes();
     $scope.listAllMaterials();
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
-    document.querySelectorAll(".datatable-class")
-        .forEach(function (element) {
-            console.log(element);
-        });
+    $scope.initial();
 
 };
 utilities.$inject = ["$scope","UtilitiesService"];
