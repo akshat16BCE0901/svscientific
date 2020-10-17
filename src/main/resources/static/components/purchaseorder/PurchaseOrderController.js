@@ -57,13 +57,11 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         });
 
     }
-    this.$onInit = function () {
-        $scope.listAllMakes();
-        $scope.listAllMaterials();
-        $scope.listAllQuantities();
-        $scope.listAllCounterParties();
-        console.log($scope.temporaryOrders);
-    }
+    $scope.listAllMakes();
+    $scope.listAllMaterials();
+    $scope.listAllQuantities();
+    $scope.listAllCounterParties();
+    console.log($scope.temporaryOrders);
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
 myapp.controller("PurchaseOrderController",PurchaseOrderController);
