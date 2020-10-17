@@ -7,7 +7,24 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allCounterParties = [];
     $scope.allMaterials = [];
     $scope.allQuantities = [];
-    $scope.temporaryOrders = [];
+    $scope.temporaryOrders = [{
+        "material" : {
+            "id" : 2
+        },
+        "make" : {
+            "id" : 1
+        },
+        "numitems" : 5,
+        "quantity" : {
+            "id" : 4
+        },
+        "catid": "CAT",
+        "rate" : 15.4,
+        "per" : "EACH",
+        "disc" : "18%",
+        "hsncode" : "SAMPLEHSN",
+        "gst" : "18%"
+    }];
 
     $scope.addRowToTempTable = function(obj){
         $scope.temporaryOrders.push(obj);
@@ -29,6 +46,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         });
         $scope.temporaryOrders = newarr;
     }
+
     $scope = displayData = function(){
         console.log($scope.temporaryOrders);
     }
