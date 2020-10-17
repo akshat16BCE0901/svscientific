@@ -7,7 +7,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allCounterParties = [];
     $scope.allMaterials = [];
     $scope.allQuantities = [];
-    $scope.temporaryOrders = [];
+    $scope.temporaryOrders = "myname";
 
 
     $scope = displayData = function(){
