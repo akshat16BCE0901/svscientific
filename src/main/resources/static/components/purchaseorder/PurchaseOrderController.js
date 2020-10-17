@@ -7,14 +7,50 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allCounterParties = [];
     $scope.allMaterials = [];
     $scope.allQuantities = [];
-    $scope.temporaryOrders = "myname";
+    $scope.temporaryOrders = [];
 
-    $scope.initial = function(){
-        $scope.temporaryOrders = "ABCDEF";
+    $scope.addRowToTempTable = function(obj){
+        $scope.temporaryOrders.push(obj);
+    }
+
+    $scope.removeSelectedRows = function(){
+        console.log("Function called removeSelectedRows");
+        console.log("Temporary array is "+$scope.temporaryOrders);
+        var newarr = [];
+        $scope.temporaryOrders.forEach(function (value) {
+            console.log("Value is "+value);
+            if (!value.Remove) {
+                newarr.push(value);
+            }
+        });
+        console.log("New arr is "+newarr);
+        $scope.temporaryOrders = newarr;
     }
 
     $scope.displayData = function(){
         console.log($scope.temporaryOrders);
+    }
+    $scope.addRow = function(){
+        var objToAdd = {
+            "material" : {
+                "id" : $scope.materialName
+            },
+            "make" : {
+                "id" : $scope.makeName
+            },
+            "numitems" : $scope.numitems,
+            "quantity" : {
+                "id" : $scope.quantity
+            },
+            "catid": $scope.catid,
+            "rate" : $scope.rate,
+            "per" : $scope.per,
+            "disc" : $scope.disc,
+            "hsncode" : $scope.hsncode,
+            "gst" : $scope.gst
+        };
+        console.log("Entered model is ====> "+JSON.stringify(objToAdd));
+        $scope.addRowToTempTable(objToAdd);
     }
 
     $scope.listAllMakes = function(){
@@ -60,11 +96,12 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         });
 
     }
-    $scope.listAllMakes();
-    $scope.listAllMaterials();
-    $scope.listAllQuantities();
-    $scope.listAllCounterParties();
-    $scope.initial();
+    this.$onInit = function () {
+        $scope.listAllMakes();
+        $scope.listAllMaterials();
+        $scope.listAllQuantities();
+        $scope.listAllCounterParties();
+    }
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
 myapp.controller("PurchaseOrderController",PurchaseOrderController);
