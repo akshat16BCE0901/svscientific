@@ -17,16 +17,16 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     $scope.addRow = function(){
         var objToAdd = {
-            "name" : materialName,
-            "makeName" : makeName,
-            "numItems" : numItems,
-            "quantity" : quantity,
-            "catid": catid,
-            "rate" : rate,
-            "per" : per,
-            "discount" : discount,
-            "hsnCode" : hsnCode,
-            "gst" : gst
+            "name" : $scope.materialName,
+            "makeName" : $scope.makeName,
+            "numItems" : $scope.numItems,
+            "quantity" : $scope.quantity,
+            "catid": $scope.catid,
+            "rate" : $scope.rate,
+            "per" : $scope.per,
+            "discount" : $scope.discount,
+            "hsnCode" : $scope.hsnCode,
+            "gst" : $scope.gst
         };
         console.log("Entered model is ====> "+JSON.stringify(objToAdd));
     }
