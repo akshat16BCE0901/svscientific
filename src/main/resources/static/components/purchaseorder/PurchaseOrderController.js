@@ -7,7 +7,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     var month = datenow.getMonth()+1;
     var year = datenow.getFullYear();
     var datefull = year+ '-' + month + '-' + day;
-    $scope.entrydate = datefull;
+    $scope.entrydate = datenow;
 
     $scope.allMakes = [];
     $scope.allCounterParties = [];
