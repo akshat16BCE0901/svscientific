@@ -9,8 +9,11 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allQuantities = [];
     $scope.temporaryOrders = "myname";
 
+    $scope.initial = function(){
+        $scope.temporaryOrders = "ABCDEF";
+    }
 
-    $scope = displayData = function(){
+    $scope.displayData = function(){
         console.log($scope.temporaryOrders);
     }
 
@@ -61,7 +64,8 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.listAllMaterials();
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
-    console.log($scope.temporaryOrders);
+    $scope.initial()
+        .then($scope.displayData());
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
 myapp.controller("PurchaseOrderController",PurchaseOrderController);
