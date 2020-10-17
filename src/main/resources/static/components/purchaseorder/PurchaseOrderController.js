@@ -7,6 +7,11 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allCounterParties = [];
     $scope.allMaterials = [];
     $scope.allQuantities = [];
+    $scope.temporaryOrders = [];
+
+    $scope.addRowToTempTable = function(obj){
+        $scope.temporaryOrders.push(obj);
+    }
 
     $scope.addRows = function(){
         for(var i=0;i<$scope.numrows;i++){
@@ -15,6 +20,18 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         PurchaseOrderService.addNewPurchaseOrder();
     }
 
+    $scope.removeSelectedRows = function(){
+        var newarr = [];
+        angular.forEach($scope.temporaryOrders, function (value) {
+            if (!value.Remove) {
+                newarr.push(value);
+            }
+        });
+        $scope.temporaryOrders = newarr;
+    }
+    $scope = displayData = function(){
+        console.log($scope.temporaryOrders);
+    }
     $scope.addRow = function(){
         var objToAdd = {
             "material" : {
@@ -35,13 +52,26 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             "gst" : $scope.gst
         };
         console.log("Entered model is ====> "+JSON.stringify(objToAdd));
-        PurchaseOrderService.addNewOrder(objToAdd)
-            .then(function(response){
-                console.log(response.data);
-                console.log(JSON.stringify(objToAdd)+" added successfully");
-            }).catch(function(error){
-            console.log("Error is --"+error);
-        });
+        $scaope.addRowToTempTable(objToAdd);
+
+        $scope.materialName = null;
+        $scope.makeName = null;
+        $scope.numitems = null;
+        $scope.quantity = null;
+        $scope.catid = null;
+        $scope.rate = null;
+        $scope.per = null;
+        $scope.disc = null;
+        $scope.hsncode = null;
+        $scope.gst = null;
+
+        // PurchaseOrderService.addNewOrder(objToAdd)
+        //     .then(function(response){
+        //         console.log(response.data);
+        //         console.log(JSON.stringify(objToAdd)+" added successfully");
+        //     }).catch(function(error){
+        //     console.log("Error is --"+error);
+        // });
     }
 
     $scope.listAllMakes = function(){

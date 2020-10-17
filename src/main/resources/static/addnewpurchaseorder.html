@@ -19,13 +19,13 @@
                         <option ng-repeat="x in allCounterParties" ng-value="{{x}}">{{x.name}} - {{x.email}}</option>
                     </select></td>
                 </tr>
-                <tr>
-                    <td>Add row for material entry</td>
-                    <td><input min="0" class="form-control" type="number" ng-model="numrows" id="quantity" style="display: inline-block;width: 70%;" placeholder="Number of rows to add" step="1" />&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-sm" style="display: inline-block;width: 25%;" ng-click="addRows()" ng-hide="numrows==0" >Add {{numrows}} rows</button></td>
-                </tr>
+<!--                <tr>-->
+<!--                    <td>Add row for material entry</td>-->
+<!--                    <td><input min="0" class="form-control" type="number" ng-model="numrows" id="quantity" style="display: inline-block;width: 70%;" placeholder="Number of rows to add" step="1" />&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-sm" style="display: inline-block;width: 25%;" ng-click="addRows()" ng-hide="numrows==0" >Add {{numrows}} rows</button></td>-->
+<!--                </tr>-->
                 <tr>
                     <td colspan="2">
-                        <table>
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>Material</th>
@@ -44,14 +44,14 @@
                             <tbody>
                                 <tr>
                                     <td><select ng-model="materialName">
-                                        <option  ng-repeat="x in allMaterials" ng-value="{{x.id}}">{{x.name}}</option>
+                                        <option  ng-repeat="x in allMaterials" ng-value="{{x.id}}-{{x.name}}">{{x.name}}</option>
                                     </select></td>
                                     <td><select ng-model="makeName">
-                                        <option ng-repeat="x in allMakes" ng-value="{{x.id}}">{{x.name}}</option>
+                                        <option ng-repeat="x in allMakes" ng-value="{{x.id}}-{{x.name}}">{{x.name}}</option>
                                     </select></td>
                                     <td><input ng-model="numitems" type="number" class="form-control" /></td>
                                     <td><select ng-model="quantity">
-                                        <option ng-repeat="x in allQuantities" ng-value="{{x.id}}">{{x.name}}({{x.abbreviation}})</option>
+                                        <option ng-repeat="x in allQuantities" ng-value="{{x.id}}-{{x.name}}">{{x.name}}({{x.abbreviation}})</option>
                                     </select></td>
                                     <td><input ng-model="catid" type="text" class="form-control" placeholder="Cat ID" /></td>
                                     <td><input ng-model="rate" type="number" class="form-control" placeholder="Rate" /></td>
@@ -66,10 +66,48 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{rows}}</td>
+                    <td colspan="2">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Material</th>
+                                    <th>Make</th>
+                                    <th>Quantity</th>
+                                    <th>unit</th>
+                                    <th>Cat Id</th>
+                                    <th>Rate</th>
+                                    <th>Per</th>
+                                    <th>Disc.</th>
+                                    <th>HSN Code</th>
+                                    <th>GST</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="order in temporaryOrders">
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{order.material.id}}</td>
+                                    <td>{{order.make.id}}</td>
+                                    <td>{{order.numitems}}</td>
+                                    <td>{{order.quantity.id}}</td>
+                                    <td>{{order.catid}}</td>
+                                    <td>{{order.rate}}</td>
+                                    <td>{{order.per}}</td>
+                                    <td>{{order.disc}}</td>
+                                    <td>{{order.hsncode}}</td>
+                                    <td>{{order.gst}}</td>
+                                    <td><input type="checkbox" ng-model="order.Remove"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="12"><button class="btn btn-primary btn-md" ng-click="removeSelectedRows()">Remove</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="text-center"><button type="button" class="btn btn-md btn-primary">Submit</button></td>
+                    <td class="text-center"><button ng-click="displayData()" type="button" class="btn btn-md btn-primary">Submit</button></td>
                     <td class="text-center"><button type="button" class="btn btn-md btn-danger">Reset</button></td>
                 </tr>
             </table>
