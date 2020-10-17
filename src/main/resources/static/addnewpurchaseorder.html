@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 table-responsive">
-            <h2 class="text-center">Add new Prchase Order</h2>
+            <h2 class="text-center">Add new Purchase Order</h2>
             <table id="newquotation" style="border: 2px solid black;" class="text-center table table-striped table-hover">
                 <tr>
                     <td>Purchase Order ID</td>
@@ -25,7 +25,42 @@
                     <td><input min="0" class="form-control" type="number" ng-model="numrows" id="quantity" style="display: inline-block;width: 70%;" placeholder="Number of rows to add" step="1" />&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-sm" style="display: inline-block;width: 25%;" ng-click="addRows()" ng-hide="numrows==0" >Add {{numrows}} rows</button></td>
                 </tr>
                 <tr>
-                    <td colspan="2">{{x}}</td>
+                    <td colspan="2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Material</th>
+                                    <th>Make</th>
+                                    <th>Quantity</th>
+                                    <th>unit</th>
+                                    <th>Cat Id</th>
+                                    <th>Rate</th>
+                                    <th>Per</th>
+                                    <th>Disc.</th>
+                                    <th>HSN Code</th>
+                                    <th>GST</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">{{rows}}</td>
                 </tr>
                 <tr>
                     <td class="text-center"><button type="button" class="btn btn-md btn-primary">Submit</button></td>
