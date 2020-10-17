@@ -20,6 +20,7 @@ public class PurchaseOrder {
     private Date inserteddate;
 
     @OneToOne
+    @JoinColumn(name="counterparty")
     private CounterParty counterparty;
 
     public Long getId() {
