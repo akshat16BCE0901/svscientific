@@ -21,8 +21,8 @@ public class Orders {
     @JoinColumn(name = "make")
     private Make make;
 
-    @Column(name="numItems")
-    private double numItems;
+    @Column(name="numitems")
+    private double numitems;
 
     @Column
     private String catid;
@@ -74,12 +74,12 @@ public class Orders {
         this.make = make;
     }
 
-    public double getNumItems() {
-        return numItems;
+    public double getNumitems() {
+        return numitems;
     }
 
-    public void setNumItems(double num_items) {
-        this.numItems = num_items;
+    public void setNumitems(double num_items) {
+        this.numitems = num_items;
     }
 
     public String getCatid() {
@@ -137,7 +137,7 @@ public class Orders {
         this.id = id;
         this.make = make;
         this.material = material;
-        this.numItems = numItems;
+        this.numitems = numItems;
         this.catid = catid;
         this.disc = disc;
         this.GST = GST;
@@ -153,7 +153,7 @@ public class Orders {
                 ", material=" + material +
                 ", quantity=" + quantity +
                 ", make=" + make +
-                ", numItems=" + numItems +
+                ", numItems=" + numitems +
                 ", catid='" + catid + '\'' +
                 ", rate=" + rate +
                 ", per='" + per + '\'' +

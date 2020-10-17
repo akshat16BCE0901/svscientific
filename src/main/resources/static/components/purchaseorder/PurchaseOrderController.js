@@ -23,7 +23,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             "make" : {
                 "id" : $scope.makeName
             },
-            "numItems" : $scope.numItems,
+            "numitems" : $scope.numitems,
             "quantity" : {
                 "id" : $scope.quantity
             },
