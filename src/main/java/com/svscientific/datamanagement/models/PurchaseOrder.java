@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.util.List;
 
 @Entity
+@Table(name = "`purchaseorder`")
 public class PurchaseOrder {
 
     @Id
