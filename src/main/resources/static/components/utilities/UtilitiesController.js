@@ -122,7 +122,7 @@ var utilities = function($scope,UtilitiesService){
     $scope.listAllCounterParties();
     document.querySelectorAll(".datatable-class")
         .forEach(function (element) {
-            element.DataTable();
+            console.log(element);
         });
 
 };
