@@ -118,7 +118,9 @@ var utilities = function($scope,UtilitiesService){
     }
 
     $scope.initial = function(){
-        jq('.datatable-class').DataTable();
+        setTimeout(function () {
+            jq('.datatable-class').DataTable();
+        },0);
     }
 
     $scope.listAllMakes();
