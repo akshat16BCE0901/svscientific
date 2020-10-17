@@ -5,6 +5,8 @@ import com.svscientific.datamanagement.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PurchaseOrderService {
 
@@ -12,5 +14,9 @@ public class PurchaseOrderService {
 
     public void addNewOrder(Orders order){
         orderRepository.save(order);
+    }
+
+    public List<Orders> getAllOrders(){
+        return orderRepository.findAll();
     }
 }
