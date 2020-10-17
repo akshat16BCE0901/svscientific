@@ -64,8 +64,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.listAllMaterials();
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
-    $scope.initial()
-        .then($scope.displayData());
+    $scope.initial();
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
 myapp.controller("PurchaseOrderController",PurchaseOrderController);
