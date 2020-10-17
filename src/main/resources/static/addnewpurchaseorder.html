@@ -44,14 +44,14 @@
                             <tbody>
                                 <tr>
                                     <td><select ng-model="materialName">
-                                        <option  ng-repeat="x in allMaterials" ng-value="{{x.id}}-{{x.name}}">{{x.name}}</option>
+                                        <option  ng-repeat="x in allMaterials" ng-value="{{x.id}}">{{x.name}}</option>
                                     </select></td>
                                     <td><select ng-model="makeName">
-                                        <option ng-repeat="x in allMakes" ng-value="{{x.id}}-{{x.name}}">{{x.name}}</option>
+                                        <option ng-repeat="x in allMakes" ng-value="{{x.id}}">{{x.name}}</option>
                                     </select></td>
                                     <td><input ng-model="numitems" type="number" class="form-control" /></td>
                                     <td><select ng-model="quantity">
-                                        <option ng-repeat="x in allQuantities" ng-value="{{x.id}}-{{x.name}}">{{x.name}}({{x.abbreviation}})</option>
+                                        <option ng-repeat="x in allQuantities" ng-value="{{x.id}}">{{x.name}}({{x.abbreviation}})</option>
                                     </select></td>
                                     <td><input ng-model="catid" type="text" class="form-control" placeholder="Cat ID" /></td>
                                     <td><input ng-model="rate" type="number" class="form-control" placeholder="Rate" /></td>
