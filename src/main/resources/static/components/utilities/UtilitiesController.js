@@ -118,16 +118,13 @@ var utilities = function($scope,UtilitiesService){
     }
 
     $scope.initial = function(){
-        setTimeout(function () {
-            jq('.datatable-class').DataTable();
-        },0);
+        jq('.datatable-class').DataTable();
     }
 
     $scope.listAllMakes();
     $scope.listAllMaterials();
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
-    $scope.initial();
 
 };
 utilities.$inject = ["$scope","UtilitiesService"];
