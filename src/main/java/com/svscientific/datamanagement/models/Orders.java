@@ -9,6 +9,9 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
+    private String purchaseorderid;
+
     @OneToOne
     @JoinColumn(name = "material")
     private Material material;
@@ -36,8 +39,10 @@ public class Orders {
     @Column
     private String disc;
 
+    @Column
     private String hsncode;
 
+    @Column
     private String gst;
 
     public Long getId() {
@@ -131,7 +136,7 @@ public class Orders {
     public Orders() {
     }
 
-    public Orders(Long id, Material material, Quantity quantity, Make make, double numItems, String catid, double rate, String per, String disc, String HSNCode, String GST) {
+    public Orders(Long id, Material material, Quantity quantity, Make make, double numItems, String catid, double rate, String per, String disc, String HSNCode, String GST, String purchaseorderid) {
         this.id = id;
         this.make = make;
         this.material = material;
@@ -142,22 +147,25 @@ public class Orders {
         this.hsncode = HSNCode;
         this.rate = rate;
         this.per = per;
+        this.quantity = quantity;
+        this.purchaseorderid = purchaseorderid;
     }
 
     @Override
     public String toString() {
         return "Orders{" +
                 "id=" + id +
+                ", purchaseorderid='" + purchaseorderid + '\'' +
                 ", material=" + material +
                 ", quantity=" + quantity +
                 ", make=" + make +
-                ", numItems=" + numitems +
+                ", numitems=" + numitems +
                 ", catid='" + catid + '\'' +
                 ", rate=" + rate +
                 ", per='" + per + '\'' +
                 ", disc='" + disc + '\'' +
-                ", HSNCode='" + hsncode + '\'' +
-                ", GST='" + gst + '\'' +
+                ", hsncode='" + hsncode + '\'' +
+                ", gst='" + gst + '\'' +
                 '}';
     }
 }

@@ -2,6 +2,12 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.message="working";
     $scope.numrows= 0;
     $scope.rows = ["a"];
+    var datenow = new Date();
+    var day = datenow.getDate();
+    var month = datenow.getMonth()+1;
+    var year = datenow.getFullYear();
+    var datefull = year+ '-' + month + '-' + day;
+    $scope.entrydate = datefull;
 
     $scope.allMakes = [];
     $scope.allCounterParties = [];
@@ -32,6 +38,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     }
     $scope.addRow = function(){
         var objToAdd = {
+            "purchaseorderid" : $scope.purchaseorderid,
             "material" : {
                 "id" : $scope.materialName
             },

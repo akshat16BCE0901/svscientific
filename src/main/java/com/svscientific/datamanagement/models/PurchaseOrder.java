@@ -13,17 +13,13 @@ public class PurchaseOrder {
     private Long id;
 
     @Column(unique = true)
-    private String purchaseOrderId;
+    private String purchaseorderid;
 
     @Column
-    @OneToMany(fetch = FetchType.EAGER)
-    private List<Orders> order;
-
-    @Column
-    private Date insertedDate;
+    private Date inserteddate;
 
     @OneToOne
-    private CounterParty counterParty;
+    private CounterParty counterparty;
 
     public Long getId() {
         return id;
@@ -33,46 +29,37 @@ public class PurchaseOrder {
         this.id = id;
     }
 
-    public String getPurchaseOrderId() {
-        return purchaseOrderId;
+    public String getPurchaseorderid() {
+        return purchaseorderid;
     }
 
-    public void setPurchaseOrderId(String purchaseOrderId) {
-        this.purchaseOrderId = purchaseOrderId;
+    public void setPurchaseorderid(String purchaseOrderId) {
+        this.purchaseorderid = purchaseOrderId;
     }
 
-    public List<Orders> getOrder() {
-        return order;
+    public Date getInserteddate() {
+        return inserteddate;
     }
 
-    public void setOrder(List<Orders> order) {
-        this.order = order;
+    public void setInserteddate(Date insertedDate) {
+        this.inserteddate = insertedDate;
     }
 
-    public Date getInsertedDate() {
-        return insertedDate;
+    public CounterParty getCounterparty() {
+        return counterparty;
     }
 
-    public void setInsertedDate(Date insertedDate) {
-        this.insertedDate = insertedDate;
-    }
-
-    public CounterParty getCounterParty() {
-        return counterParty;
-    }
-
-    public void setCounterParty(CounterParty counterParty) {
-        this.counterParty = counterParty;
+    public void setCounterparty(CounterParty counterParty) {
+        this.counterparty = counterParty;
     }
 
     @Override
     public String toString() {
         return "PurchaseOrder{" +
                 "id=" + id +
-                ", purchaseOrderId='" + purchaseOrderId + '\'' +
-                ", order=" + order +
-                ", insertedDate=" + insertedDate +
-                ", counterParty=" + counterParty +
+                ", purchaseOrderId='" + purchaseorderid + '\'' +
+                ", insertedDate=" + inserteddate +
+                ", counterParty=" + counterparty +
                 '}';
     }
 }
