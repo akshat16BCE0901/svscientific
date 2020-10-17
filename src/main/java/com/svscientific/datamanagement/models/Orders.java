@@ -53,6 +53,14 @@ public class Orders {
         this.id = id;
     }
 
+    public String getPurchaseorderid() {
+        return purchaseorderid;
+    }
+
+    public void setPurchaseorderid(String purchaseorderid) {
+        this.purchaseorderid = purchaseorderid;
+    }
+
     public Material getMaterial() {
         return material;
     }

@@ -123,6 +123,7 @@ var utilities = function($scope,UtilitiesService){
     $scope.listAllCounterParties();
 
     window.onload = function () {
+        console.log("Window onload called");
         jq('.datatable-class').DataTable();
     };
 
