@@ -3,10 +3,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.numrows= 0;
     $scope.rows = ["a"];
     var datenow = new Date();
-    var day = datenow.getDate();
-    var month = datenow.getMonth()+1;
-    var year = datenow.getFullYear();
-    var datefull = year+ '-' + month + '-' + day;
     $scope.entrydate = datenow;
 
     $scope.allMakes = [];
@@ -34,7 +30,18 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     }
 
     $scope.displayData = function(){
-        console.log($scope.temporaryOrders);
+        if($scope.purchaseorderid==undefined || $scope.purchaseorderid ==""){
+            window.alert("Purchase order ID cannot be empty");
+        }
+        else{
+            $scope.temporaryOrders.forEach(function(order){
+                order.purchaseorderid = $scope.purchaseorderid;
+            });
+            console.log($scope.temporaryOrders);
+            $scope.temporaryOrders.forEach(function(order){
+                PurchaseOrderService.addNewOrder(order);
+            });
+        }
     }
     $scope.addRow = function(){
         var objToAdd = {

@@ -120,6 +120,10 @@ var utilities = function($scope,UtilitiesService){
     $scope.listAllMaterials();
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
+    document.querySelectorAll(".datatable-class")
+        .forEach(function (element) {
+            element.DataTable();
+        });
 
 };
 utilities.$inject = ["$scope","UtilitiesService"];

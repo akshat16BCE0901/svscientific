@@ -10,14 +10,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-        <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-grid.css">
-        <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/dist/styles/ag-theme-alpine.css">
+        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
         <script type="text/javascript" src="myapp.js"></script>
 
         <script src="components/purchaseorder/PurchaseOrderController.js"></script>
         <script src="components/purchaseorder/PurchaseOrderService.js"></script>
-        
 
         <script src="components/utils/HttpRequestService.js"></script>
 
@@ -38,16 +37,5 @@
             <div ui-view="utilities"></div>
             <div ui-view="viewallutilities"></div>
     </body>
-    
-        
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#quotationTable").DataTable();
-            $("#purchaseOrderTable").DataTable();
-            alert("hello");
-            var loadtable = function(tablename){
-                alert(tablename);
-            }
-        });
-    </script>
+
 </html>
