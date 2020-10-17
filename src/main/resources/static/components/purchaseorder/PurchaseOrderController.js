@@ -52,7 +52,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             "gst" : $scope.gst
         };
         console.log("Entered model is ====> "+JSON.stringify(objToAdd));
-        $scaope.addRowToTempTable(objToAdd);
+        $scope.addRowToTempTable(objToAdd);
 
         // PurchaseOrderService.addNewOrder(objToAdd)
         //     .then(function(response){
