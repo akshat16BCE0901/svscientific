@@ -117,14 +117,14 @@ var utilities = function($scope,UtilitiesService){
         });
     }
 
-    $scope.initial = function(){
-        jq('.datatable-class').DataTable();
-    }
-
     $scope.listAllMakes();
     $scope.listAllMaterials();
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
+
+    document.onload(function () {
+        jq('.datatable-class').DataTable();
+    });
 
 };
 utilities.$inject = ["$scope","UtilitiesService"];
