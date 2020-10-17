@@ -122,7 +122,7 @@ var utilities = function($scope,UtilitiesService){
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
 
-    document.onload = function () {
+    window.onload = function () {
         jq('.datatable-class').DataTable();
     };
 
