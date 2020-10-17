@@ -2,13 +2,14 @@ var PurchaseOrderService = function(HttpRequestService){
 
     var service = function(){};
 
-    service.prototype.addNewPurchaseOrder = function(){
-        console.log("Added New Purchase Order");
+    service.prototype.addNewPurchaseOrder = function(json){
+        return HttpRequestService.executeJsonPostRequest("/api/purchaseorder/savepurchaseorder",json);
     }
 
     service.prototype.addNewOrder = function (json) {
         return HttpRequestService.executeJsonPostRequest("/api/purchaseorder/saveorder",json);
     }
+
 
     return new service();
 }

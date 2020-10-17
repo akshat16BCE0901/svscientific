@@ -1,6 +1,7 @@
 package com.svscientific.datamanagement.controllers;
 
 import com.svscientific.datamanagement.models.Orders;
+import com.svscientific.datamanagement.models.PurchaseOrder;
 import com.svscientific.datamanagement.services.PurchaseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 
 @RestController
 @RequestMapping("/api/purchaseorder")
@@ -24,5 +28,17 @@ public class PurchaseOrderController {
     @RequestMapping(value = "/getallorders", method = RequestMethod.GET)
     public List<Orders> allorders(){
         return purchaseOrderService.getAllOrders();
+    }
+
+    @RequestMapping(value = "/savepurchaseorder", method = RequestMethod.POST)
+    public void savePurchaseOrder(@RequestBody PurchaseOrder purchaseOrder){
+        Date date = new Date(Calendar.getInstance().getTimeInMillis());
+        purchaseOrder.setInserteddate(date);
+        purchaseOrderService.addNewPurchaseOrder(purchaseOrder);
+    }
+
+    @RequestMapping(value = "/getallpurchaseorders", method = RequestMethod.GET)
+    public List<PurchaseOrder> allpurchaseorders(){
+        return purchaseOrderService.getAllPurchaseOrders();
     }
 }

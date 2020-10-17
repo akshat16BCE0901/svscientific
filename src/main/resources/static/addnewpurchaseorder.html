@@ -9,14 +9,14 @@
                 </tr>
                 <tr>
                     <td>Counterparty Name</td>
-                    <td><select class="form-control" name="ctrpty" id="counterpartyname">
+                    <td><select ng-model="counterpartyname" class="form-control" name="ctrpty" id="counterpartyname">
                         <option selected disabled>-- Select Counterparty Name --</option>
                         <option ng-repeat="x in allCounterParties" ng-value="{{x.id}}">{{x.name}} - {{x.email}}</option>
                     </select></td>
                 </tr>
                 <tr>
                     <td>Entry Date</td>
-                    <td><input class="form-control" type="date" disabled ng-model="entrydate" /></td>
+                    <td><input ng-model="entrydate" class="form-control" type="date" disabled ng-model="entrydate" /></td>
                 </tr>
                 <tr>
                     <td colspan="2">

@@ -38,9 +38,23 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
                 order.purchaseorderid = $scope.purchaseorderid;
             });
             console.log($scope.temporaryOrders);
+
             $scope.temporaryOrders.forEach(function(order){
-                PurchaseOrderService.addNewOrder(order);
+                PurchaseOrderService.addNewOrder(order)
+                    .then(function(response){
+                        console.log(response.data);
+                    }).catch(function(error){
+                    console.log("Error is --"+error);
+                });
             });
+
+            var POObject = {
+                "purchaseorderid" : $scope.purchaseorderid,
+                "counterparty" : {
+                    "id" : $scope.counterpartyname
+                }
+            };
+            PurchaseOrderService.addNewPurchaseOrder(POObject);
         }
     }
     $scope.addRow = function(){
