@@ -36,11 +36,11 @@ public class Orders {
     @Column
     private String disc;
 
-    @Column(name="HSNCode")
-    private String HSNCode;
+    @Column(name="hsncode")
+    private String hsncode;
 
-    @Column(name="GST")
-    private String GST;
+    @Column(name="gst")
+    private String gst;
 
     public Long getId() {
         return id;
@@ -114,20 +114,20 @@ public class Orders {
         this.disc = disc;
     }
 
-    public String getHSNCode() {
-        return HSNCode;
+    public String getHsncode() {
+        return hsncode;
     }
 
-    public void setHSNCode(String HSNCode) {
-        this.HSNCode = HSNCode;
+    public void setHsncode(String hsncode) {
+        this.hsncode = hsncode;
     }
 
-    public String getGST() {
-        return GST;
+    public String getGst() {
+        return gst;
     }
 
-    public void setGST(String GST) {
-        this.GST = GST;
+    public void setGst(String gst) {
+        this.gst = gst;
     }
 
     public Orders() {
@@ -140,8 +140,8 @@ public class Orders {
         this.numitems = numItems;
         this.catid = catid;
         this.disc = disc;
-        this.GST = GST;
-        this.HSNCode = HSNCode;
+        this.gst = GST;
+        this.hsncode = HSNCode;
         this.rate = rate;
         this.per = per;
     }
@@ -158,8 +158,8 @@ public class Orders {
                 ", rate=" + rate +
                 ", per='" + per + '\'' +
                 ", disc='" + disc + '\'' +
-                ", HSNCode='" + HSNCode + '\'' +
-                ", GST='" + GST + '\'' +
+                ", HSNCode='" + hsncode + '\'' +
+                ", GST='" + gst + '\'' +
                 '}';
     }
 }

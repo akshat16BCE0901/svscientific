@@ -31,8 +31,8 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             "rate" : $scope.rate,
             "per" : $scope.per,
             "disc" : $scope.disc,
-            "HSNCode" : $scope.HSNCode,
-            "GST" : $scope.GST
+            "hsncode" : $scope.hsncode,
+            "gst" : $scope.gst
         };
         console.log("Entered model is ====> "+JSON.stringify(objToAdd));
         PurchaseOrderService.addNewOrder(objToAdd)
