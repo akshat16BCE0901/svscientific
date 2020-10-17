@@ -21,7 +21,7 @@ public class Orders {
     @JoinColumn(name = "make")
     private Make make;
 
-    @Column
+    @Column(name="numItems")
     private double numItems;
 
     @Column
@@ -36,10 +36,10 @@ public class Orders {
     @Column
     private String disc;
 
-    @Column
+    @Column(name="HSNCode")
     private String HSNCode;
 
-    @Column
+    @Column(name="GST")
     private String GST;
 
     public Long getId() {
