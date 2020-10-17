@@ -54,17 +54,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         console.log("Entered model is ====> "+JSON.stringify(objToAdd));
         $scaope.addRowToTempTable(objToAdd);
 
-        $scope.materialName = null;
-        $scope.makeName = null;
-        $scope.numitems = null;
-        $scope.quantity = null;
-        $scope.catid = null;
-        $scope.rate = null;
-        $scope.per = null;
-        $scope.disc = null;
-        $scope.hsncode = null;
-        $scope.gst = null;
-
         // PurchaseOrderService.addNewOrder(objToAdd)
         //     .then(function(response){
         //         console.log(response.data);
