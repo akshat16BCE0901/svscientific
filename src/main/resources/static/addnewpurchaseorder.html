@@ -44,16 +44,23 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><select>
+                                        <option ng-repeat="x in allMaterials" ng-value="{{x}}">{{x.name}}</option>
+                                    </select></td>
+                                    <td><select>
+                                        <option ng-repeat="x in allMakes" ng-value="{{x}}">{{x.name}}</option>
+                                    </select></td>
+                                    <td><input type="number" class="form-control" /></td>
+                                    <td><select>
+                                        <option ng-repeat="x in allQuantities" ng-value="{{x}}">{{x.name}}({{x.abbreviation}})</option>
+                                    </select></td>
+                                    <td><input type="text" class="form-control" placeholder="Cat ID" /></td>
+                                    <td><input type="number" class="form-control" placeholder="Rate" /></td>
+                                    <td><input type="text" class="form-control" placeholder="Per" /></td>
+                                    <td><input type="text" class="form-control" placeholder="Discount" /></td>
+                                    <td><input type="text" class="form-control" placeholder="HSN Code"/></td>
+                                    <td><input type="text" class="form-control" placeholder="GST" /></td>
+                                    <td>ABC</td>
                                 </tr>
                             </tbody>
                         </table>
