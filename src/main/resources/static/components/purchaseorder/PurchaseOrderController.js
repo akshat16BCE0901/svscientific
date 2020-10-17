@@ -7,34 +7,10 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allCounterParties = [];
     $scope.allMaterials = [];
     $scope.allQuantities = [];
-    $scope.temporaryOrders = [{
-        "material" : {
-            "id" : 2
-        },
-        "make" : {
-            "id" : 1
-        },
-        "numitems" : 5,
-        "quantity" : {
-            "id" : 4
-        },
-        "catid": "CAT",
-        "rate" : 15.4,
-        "per" : "EACH",
-        "disc" : "18%",
-        "hsncode" : "SAMPLEHSN",
-        "gst" : "18%"
-    }];
+    $scope.temporaryOrders = [];
 
     $scope.addRowToTempTable = function(obj){
         $scope.temporaryOrders.push(obj);
-    }
-
-    $scope.addRows = function(){
-        for(var i=0;i<$scope.numrows;i++){
-            $scope.rows.push("a");
-        }
-        PurchaseOrderService.addNewPurchaseOrder();
     }
 
     $scope.removeSelectedRows = function(){
@@ -75,14 +51,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         };
         console.log("Entered model is ====> "+JSON.stringify(objToAdd));
         $scope.addRowToTempTable(objToAdd);
-
-        // PurchaseOrderService.addNewOrder(objToAdd)
-        //     .then(function(response){
-        //         console.log(response.data);
-        //         console.log(JSON.stringify(objToAdd)+" added successfully");
-        //     }).catch(function(error){
-        //     console.log("Error is --"+error);
-        // });
     }
 
     $scope.listAllMakes = function(){
@@ -133,6 +101,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         $scope.listAllMaterials();
         $scope.listAllQuantities();
         $scope.listAllCounterParties();
+        console.log($scope.temporaryOrders);
     }
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
