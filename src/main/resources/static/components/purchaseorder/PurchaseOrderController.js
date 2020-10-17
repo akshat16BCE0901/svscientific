@@ -16,7 +16,19 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     }
 
     $scope.addRow = function(){
-        console.log("Entered model is ====> "+JSON.stringify({"Name":$scope.materialName}));
+        var objToAdd = {
+            "name" : materialName,
+            "makeName" : makeName,
+            "numItems" : numItems,
+            "quantity" : quantity,
+            "catid": catid,
+            "rate" : rate,
+            "per" : per,
+            "discount" : discount,
+            "hsnCode" : hsnCode,
+            "gst" : gst
+        };
+        console.log("Entered model is ====> "+JSON.stringify(objToAdd));
     }
 
     $scope.listAllMakes = function(){
