@@ -17,10 +17,16 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     $scope.addRow = function(){
         var objToAdd = {
-            "material" : $scope.materialName,
-            "make" : $scope.makeName,
+            "material" : {
+                "id" : $scope.materialName
+            },
+            "make" : {
+                "id" : $scope.makeName
+            },
             "numItems" : $scope.numItems,
-            "quantity" : $scope.quantity,
+            "quantity" : {
+                "id" : $scope.quantity
+            },
             "catid": $scope.catid,
             "rate" : $scope.rate,
             "per" : $scope.per,
