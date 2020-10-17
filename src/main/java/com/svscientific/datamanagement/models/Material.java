@@ -28,6 +28,14 @@ public class Material {
         this.name = name;
     }
 
+    public Material() {
+    }
+
+    public Material(Long id, String name){
+        this.id = id;
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Material{" +

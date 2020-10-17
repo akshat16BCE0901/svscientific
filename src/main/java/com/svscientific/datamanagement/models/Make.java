@@ -11,6 +11,14 @@ public class Make {
     @Column
     private String name;
 
+    public Make() {
+    }
+
+    public Make(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }

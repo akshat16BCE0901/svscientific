@@ -128,6 +128,22 @@ public class Orders {
         this.GST = GST;
     }
 
+    public Orders() {
+    }
+
+    public Orders(Long id, Material material, Quantity quantity, Make make, double numItems, String catid, double rate, String per, String disc, String HSNCode, String GST) {
+        this.id = id;
+        this.make = make;
+        this.material = material;
+        this.numItems = numItems;
+        this.catid = catid;
+        this.disc = disc;
+        this.GST = GST;
+        this.HSNCode = HSNCode;
+        this.rate = rate;
+        this.per = per;
+    }
+
     @Override
     public String toString() {
         return "Orders{" +

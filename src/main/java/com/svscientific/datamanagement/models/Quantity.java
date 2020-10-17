@@ -39,6 +39,15 @@ public class Quantity {
         this.abbreviation = abbreviation;
     }
 
+    public Quantity() {
+    }
+
+    public Quantity(Long id, String name, String abbreviation) {
+        this.id = id;
+        this.name = name;
+        this.abbreviation = abbreviation;
+    }
+
     @Override
     public String toString() {
         return "Quantity{" +
