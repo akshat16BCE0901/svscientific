@@ -29,6 +29,13 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             "GST" : $scope.GST
         };
         console.log("Entered model is ====> "+JSON.stringify(objToAdd));
+        PurchaseOrderService.addNewOrder(objToAdd)
+            .then(function(response){
+                console.log(response.data);
+                console.log(JSON.stringify(objToAdd)+" added successfully");
+            }).catch(function(error){
+            console.log("Error is --"+error);
+        });
     }
 
     $scope.listAllMakes = function(){

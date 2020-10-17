@@ -3,7 +3,7 @@ package com.svscientific.datamanagement.models;
 import javax.persistence.*;
 
 @Entity
-public class Order {
+public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -130,7 +130,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
+        return "Orders{" +
                 "id=" + id +
                 ", material=" + material +
                 ", quantity=" + quantity +

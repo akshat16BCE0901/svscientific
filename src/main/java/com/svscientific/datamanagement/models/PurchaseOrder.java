@@ -17,7 +17,7 @@ public class PurchaseOrder {
 
     @Column
     @OneToMany(fetch = FetchType.EAGER)
-    private List<Order> order;
+    private List<Orders> order;
 
     @Column
     private Date insertedDate;
@@ -41,11 +41,11 @@ public class PurchaseOrder {
         this.purchaseOrderId = purchaseOrderId;
     }
 
-    public List<Order> getOrder() {
+    public List<Orders> getOrder() {
         return order;
     }
 
-    public void setOrder(List<Order> order) {
+    public void setOrder(List<Orders> order) {
         this.order = order;
     }
 
