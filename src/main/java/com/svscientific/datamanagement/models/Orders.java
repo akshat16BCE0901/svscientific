@@ -10,15 +10,15 @@ public class Orders {
     private Long id;
 
     @OneToOne
-    @Column
+    @JoinColumn(name = "material")
     private Material material;
 
     @OneToOne
-    @Column
+    @JoinColumn(name="quantity")
     private Quantity quantity;
 
     @OneToOne
-    @Column
+    @JoinColumn(name = "make")
     private Make make;
 
     @Column
