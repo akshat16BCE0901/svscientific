@@ -36,10 +36,8 @@ public class Orders {
     @Column
     private String disc;
 
-    @Column(name="hsncode")
     private String hsncode;
 
-    @Column(name="gst")
     private String gst;
 
     public Long getId() {
