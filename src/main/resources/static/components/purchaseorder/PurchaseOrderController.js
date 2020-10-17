@@ -39,6 +39,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     $scope.removeSelectedRows = function(){
         console.log("Function called removeSelectedRows");
+        console.log("Temporary array is "+$scope.temporaryOrders);
         var newarr = [];
         $scope.temporaryOrders.forEach(function (value) {
             console.log("Value is "+value);
