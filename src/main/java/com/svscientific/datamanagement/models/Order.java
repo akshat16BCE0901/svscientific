@@ -20,7 +20,7 @@ public class Order {
     private Make make;
 
     @Column
-    private double num_items;
+    private double numItems;
 
     @Column
     private String catid;
@@ -72,12 +72,12 @@ public class Order {
         this.make = make;
     }
 
-    public double getNum_items() {
-        return num_items;
+    public double getNumItems() {
+        return numItems;
     }
 
-    public void setNum_items(double num_items) {
-        this.num_items = num_items;
+    public void setNumItems(double num_items) {
+        this.numItems = num_items;
     }
 
     public String getCatid() {
@@ -135,7 +135,7 @@ public class Order {
                 ", material=" + material +
                 ", quantity=" + quantity +
                 ", make=" + make +
-                ", num_items=" + num_items +
+                ", numItems=" + numItems +
                 ", catid='" + catid + '\'' +
                 ", rate=" + rate +
                 ", per='" + per + '\'' +
