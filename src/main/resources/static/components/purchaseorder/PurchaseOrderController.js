@@ -14,6 +14,11 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         }
         PurchaseOrderService.addNewPurchaseOrder();
     }
+
+    $scope.addRow = function(){
+        console.log("Entered model is ====> "+JSON.stringify({"Name":$scope.materialName}));
+    }
+
     $scope.listAllMakes = function(){
         UtilitiesService.listAllMakes().then(function(httpData){
             console.log("HttpData :"+httpData.data);

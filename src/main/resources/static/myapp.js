@@ -102,42 +102,4 @@ myapp.controller("QuotationController",function($scope){
 myapp.controller("HomeCtrl",function(){});
 myapp.controller("EmailController",function(){});
 myapp.controller("NewEmailController",function(){});
-
-myapp.controller("QuotationController",function($scope){
-    var quotations = [
-        {
-            "id" : 1,
-            "quotId" : "SV01102020",
-            "ctrptyname" : "Daurala Organics",
-            "materialName" : "Beaker",
-            "quantity" : 500,
-            "unitOfMeasurement" : "Units",
-            "entryDate" : "01-10-2020",
-            "followUpDate" : "04-10-2020",
-            "completed" : "Yes"
-        },
-        {
-            "id" : 2,
-            "quotId" : "SV02102020",
-            "ctrptyname" : "ABC trading Co.",
-            "materialName" : "Pottasium sulphate",
-            "quantity" : 500,
-            "unitOfMeasurement" : "Litres",
-            "entryDate" : "02-10-2020",
-            "followUpDate" : "05-10-2020",
-            "completed" : "No"
-        },
-        {
-            "id" : 3,
-            "quotId" : "SV03102020",
-            "ctrptyname" : "Daurala Organics",
-            "materialName" : "Iodine",
-            "quantity" : 500,
-            "unitOfMeasurement" : "Kilograms",
-            "entryDate" : "03-10-2020",
-            "followUpDate" : "07-10-2020",
-            "completed" : "Yes"
-        }
-    ];
-    $scope.quotations = quotations;
-});
+myapp.controller("QuotationController",function(){});

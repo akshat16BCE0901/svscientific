@@ -43,23 +43,23 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><select>
-                                        <option ng-repeat="x in allMaterials" ng-value="{{x}}">{{x.name}}</option>
+                                    <td><select ng-model="materialName">
+                                        <option  ng-repeat="x in allMaterials" ng-value="{{x}}">{{x.name}}</option>
                                     </select></td>
-                                    <td><select>
+                                    <td><select ng-model="makeName">
                                         <option ng-repeat="x in allMakes" ng-value="{{x}}">{{x.name}}</option>
                                     </select></td>
-                                    <td><input type="number" class="form-control" /></td>
-                                    <td><select>
+                                    <td><input ng-model="numItems" type="number" class="form-control" /></td>
+                                    <td><select ng-model="quantity">
                                         <option ng-repeat="x in allQuantities" ng-value="{{x}}">{{x.name}}({{x.abbreviation}})</option>
                                     </select></td>
-                                    <td><input type="text" class="form-control" placeholder="Cat ID" /></td>
-                                    <td><input type="number" class="form-control" placeholder="Rate" /></td>
-                                    <td><input type="text" class="form-control" placeholder="Per" /></td>
-                                    <td><input type="text" class="form-control" placeholder="Discount" /></td>
-                                    <td><input type="text" class="form-control" placeholder="HSN Code"/></td>
-                                    <td><input type="text" class="form-control" placeholder="GST" /></td>
-                                    <td>ABC</td>
+                                    <td><input ng-model="catId" type="text" class="form-control" placeholder="Cat ID" /></td>
+                                    <td><input ng-model="rate" type="number" class="form-control" placeholder="Rate" /></td>
+                                    <td><input ng-model="per" type="text" class="form-control" placeholder="Per" /></td>
+                                    <td><input ng-model="discount" type="text" class="form-control" placeholder="Discount" /></td>
+                                    <td><input ng-model="hsnCode" type="text" class="form-control" placeholder="HSN Code"/></td>
+                                    <td><input ng-model="gst" type="text" class="form-control" placeholder="GST" /></td>
+                                    <td><input type="button" class="btn btn-primary btn-sm" value="Add row" onclick="addRow()"/> </td>
                                 </tr>
                             </tbody>
                         </table>
