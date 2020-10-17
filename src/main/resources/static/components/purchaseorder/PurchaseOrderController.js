@@ -40,7 +40,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.removeSelectedRows = function(){
         console.log("Function called removeSelectedRows");
         var newarr = [];
-        angular.forEach($scope.temporaryOrders, function (value) {
+        $scope.temporaryOrders.forEach(function (value) {
             console.log("Value is "+value);
             if (!value.Remove) {
                 newarr.push(value);
