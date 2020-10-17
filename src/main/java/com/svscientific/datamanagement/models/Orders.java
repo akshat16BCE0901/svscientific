@@ -7,16 +7,18 @@ public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
     private Long id;
 
     @OneToOne
+    @Column
     private Material material;
 
     @OneToOne
+    @Column
     private Quantity quantity;
 
     @OneToOne
+    @Column
     private Make make;
 
     @Column
