@@ -132,16 +132,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     }
 
-    $scope.listAllPurchaseOrders = function(){
-        PurchaseOrderService.listAllPurchaseOrders().then(function(httpData){
-            console.log("HttpData :"+httpData.data);
-            $scope.allPurchaseOrders = httpData.data;
-            console.log("All Purchase orders are -- "+$scope.allPurchaseOrders);
-        }).catch(function(error){
-            console.log("Error is --"+error);
-        });
-
-    }
 
     $scope.listAllQuantities = function(){
         UtilitiesService.listAllQuantities().then(function(httpData){
@@ -165,8 +155,14 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     }
 
-    $scope.populateAllPOs = async function(){
-        await $scope.listAllPurchaseOrders();
+    $scope.populateAllPOs = function(){
+        PurchaseOrderService.listAllPurchaseOrders().then(function(httpData){
+            console.log("HttpData :"+httpData.data);
+            $scope.allPurchaseOrders = httpData.data;
+            console.log("All Purchase orders are -- "+$scope.allPurchaseOrders);
+        }).catch(function(error){
+            console.log("Error is --"+error);
+        });
         $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
             var obj = purchaseOrder;
             var allOrdersOfThisPO = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
