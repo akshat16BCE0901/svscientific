@@ -121,18 +121,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     }
 
-    $scope.listAllOrdersByPOID = function(POId){
-        PurchaseOrderService.listAllOrdersByPOID(POId).then(function(httpData){
-            console.log("HttpData :"+httpData.data);
-            console.log(httpData.data);
-            return httpData.data;
-        }).catch(function(error){
-            console.log("Error is --"+error);
-        });
-
-    }
-
-
     $scope.listAllQuantities = function(){
         UtilitiesService.listAllQuantities().then(function(httpData){
             console.log("HttpData :"+httpData.data);
@@ -164,9 +152,12 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
                 var obj = purchaseOrder;
                 obj.allOrders = Array();
                 console.log(purchaseOrder);
-                $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid).then(function(result){
-                    console.log(result);
-                    obj.allOrders = result;
+                PurchaseOrderService.listAllOrdersByPOID(POId).then(function(orders){
+                    console.log("HttpData :"+orders.data);
+                    console.log(orders.data);
+                    obj.allOrders.push(orders.data);
+                }).catch(function(error){
+                    console.log("Error is --"+error);
                 });
                 $scope.allPOsWithMaterialsList.push(obj);
             });
