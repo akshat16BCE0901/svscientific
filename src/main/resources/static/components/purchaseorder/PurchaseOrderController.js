@@ -152,7 +152,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
                 var obj = purchaseOrder;
                 obj.allOrders = Array();
                 console.log(purchaseOrder);
-                PurchaseOrderService.listAllOrdersByPOID(POId).then(function(orders){
+                PurchaseOrderService.listAllOrdersByPOID(purchaseOrder.purchaseorderid).then(function(orders){
                     console.log("HttpData :"+orders.data);
                     console.log(orders.data);
                     obj.allOrders.push(orders.data);
