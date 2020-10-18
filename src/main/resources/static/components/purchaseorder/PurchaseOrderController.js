@@ -163,7 +163,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
                 $scope.allPOsWithMaterialsList.push(obj);
             });
             console.log($scope.allPOsWithMaterialsList);
-            jq("#purchaseOrderTable").DataTable();
         }).catch(function(error){
             console.log("Error is --"+error);
         });
