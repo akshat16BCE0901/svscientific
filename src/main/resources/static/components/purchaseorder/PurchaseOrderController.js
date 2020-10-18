@@ -121,7 +121,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     }
 
-    $scope.listAllOrdersByPOid = function(POId){
+    $scope.listAllOrdersByPOID = function(POId){
         PurchaseOrderService.listAllOrdersByPOID(POId).then(function(httpData){
             console.log("HttpData :"+httpData.data);
             return httpData.data;
