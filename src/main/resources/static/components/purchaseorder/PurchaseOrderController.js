@@ -165,7 +165,8 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     }
 
-    $scope.populateAllPOs = function(){
+    $scope.populateAllPOs = async function(){
+        await $scope.listAllPurchaseOrders();
         $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
             var obj = purchaseOrder;
             var allOrdersOfThisPO = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
@@ -179,7 +180,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         await $scope.listAllMaterials();
         await $scope.listAllQuantities();
         await $scope.listAllCounterParties();
-        await $scope.listAllPurchaseOrders();
         await $scope.populateAllPOs();
     }
 };
