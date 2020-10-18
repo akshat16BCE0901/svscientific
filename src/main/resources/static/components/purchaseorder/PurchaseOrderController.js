@@ -10,6 +10,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allMaterials = [];
     $scope.allQuantities = [];
     $scope.temporaryOrders = [];
+    $scope.allPOsWithMaterialsList = [];
 
     $scope.addRowToTempTable = function(obj){
         $scope.temporaryOrders.push(obj);
@@ -30,7 +31,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     }
 
     $scope.displayData = function(){
-        if($scope.purchaseorderid==undefined || $scope.purchaseorderid ==""){
+        if($scope.purchaseorderid===undefined || $scope.purchaseorderid ==""){
             window.alert("Purchase order ID cannot be empty");
         }
         else{
@@ -54,7 +55,12 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
                     "id" : $scope.counterpartyname
                 }
             };
-            PurchaseOrderService.addNewPurchaseOrder(POObject);
+            PurchaseOrderService.addNewPurchaseOrder(POObject)
+                .then(function(response){
+                    console.log(response.data);
+                }).catch(function(error) {
+                console.log("Error is --" + error);
+            });
         }
     }
     $scope.addRow = function(){
@@ -117,7 +123,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.listAllOrdersByPOid = function(POId){
         PurchaseOrderService.listAllOrdersByPOID(POId).then(function(httpData){
             console.log("HttpData :"+httpData.data);
-            $scope.allOrdersOfPOid = httpData.data;
+            return httpData.data;
             console.log("All Orders are -- "+$scope.allOrdersOfPOid);
         }).catch(function(error){
             console.log("Error is --"+error);
@@ -129,7 +135,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         PurchaseOrderService.listAllPurchaseOrders().then(function(httpData){
             console.log("HttpData :"+httpData.data);
             $scope.allPurchaseOrders = httpData.data;
-            console.log("All Purchase orders are -- "+$scope.allMaterials);
+            console.log("All Purchase orders are -- "+$scope.allPurchaseOrders);
         }).catch(function(error){
             console.log("Error is --"+error);
         });
@@ -157,11 +163,22 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         });
 
     }
+
+    $scope.populateAllPOs = function(){
+        $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
+            var obj = purchaseOrder;
+            var allOrdersOfThisPO = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
+            obj.allOrders = allOrdersOfThisPO;
+            $scope.allPOsWithMaterialsList.push(obj);
+        });
+        console.log($scope.allPOsWithMaterialsList);
+    }
     this.$onInit = function () {
         $scope.listAllMakes();
         $scope.listAllMaterials();
         $scope.listAllQuantities();
         $scope.listAllCounterParties();
+        $scope.populateAllPOs();
     }
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
