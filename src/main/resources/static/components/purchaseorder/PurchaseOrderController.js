@@ -10,6 +10,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.allMaterials = [];
     $scope.allQuantities = [];
     $scope.temporaryOrders = [];
+    $scope.allPurchaseOrders = [];
     $scope.allPOsWithMaterialsList = [];
 
     $scope.addRowToTempTable = function(obj){
