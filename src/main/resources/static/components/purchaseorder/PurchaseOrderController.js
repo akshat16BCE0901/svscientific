@@ -124,8 +124,8 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
     $scope.listAllOrdersByPOID = function(POId){
         PurchaseOrderService.listAllOrdersByPOID(POId).then(function(httpData){
             console.log("HttpData :"+httpData.data);
+            console.log(httpData.data);
             return httpData.data;
-            console.log("All Orders are -- "+$scope.allOrdersOfPOid);
         }).catch(function(error){
             console.log("Error is --"+error);
         });
@@ -163,8 +163,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
                 var obj = purchaseOrder;
                 console.log(purchaseOrder);
-                var allOrdersOfThisPO = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
-                obj.allOrders = allOrdersOfThisPO;
+                obj.allOrders = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
                 $scope.allPOsWithMaterialsList.push(obj);
             });
             console.log($scope.allPOsWithMaterialsList);
