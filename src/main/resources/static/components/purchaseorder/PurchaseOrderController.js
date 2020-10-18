@@ -150,12 +150,12 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             console.log("All Purchase orders are -- "+$scope.allPurchaseOrders);
             $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
                 var obj = purchaseOrder;
-                obj.allOrders = Array();
+                obj.allOrders = null;
                 console.log(purchaseOrder);
                 PurchaseOrderService.listAllOrdersByPOID(purchaseOrder.purchaseorderid).then(function(orders){
                     console.log("HttpData :"+orders.data);
                     console.log(orders.data);
-                    obj.allOrders.push(orders.data);
+                    obj.allOrders = orders.data;
                 }).catch(function(error){
                     console.log("Error is --"+error);
                 });
