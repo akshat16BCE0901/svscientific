@@ -163,7 +163,8 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
                 var obj = purchaseOrder;
                 console.log(purchaseOrder);
-                obj.allOrders = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
+                var allOrders = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
+                console.log(allOrders);
                 $scope.allPOsWithMaterialsList.push(obj);
             });
             console.log($scope.allPOsWithMaterialsList);
