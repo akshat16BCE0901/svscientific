@@ -160,17 +160,17 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             console.log("HttpData :"+httpData.data);
             $scope.allPurchaseOrders = httpData.data;
             console.log("All Purchase orders are -- "+$scope.allPurchaseOrders);
+            $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
+                var obj = purchaseOrder;
+                console.log(purchaseOrder);
+                var allOrdersOfThisPO = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
+                obj.allOrders = allOrdersOfThisPO;
+                $scope.allPOsWithMaterialsList.push(obj);
+            });
+            console.log($scope.allPOsWithMaterialsList);
         }).catch(function(error){
             console.log("Error is --"+error);
         });
-        $scope.allPurchaseOrders.forEach(function (purchaseOrder) {
-            var obj = purchaseOrder;
-            console.log(purchaseOrder);
-            var allOrdersOfThisPO = $scope.listAllOrdersByPOID(purchaseOrder.purchaseorderid);
-            obj.allOrders = allOrdersOfThisPO;
-            $scope.allPOsWithMaterialsList.push(obj);
-        });
-        console.log($scope.allPOsWithMaterialsList);
     }
     this.$onInit = async function () {
         await $scope.listAllMakes();
