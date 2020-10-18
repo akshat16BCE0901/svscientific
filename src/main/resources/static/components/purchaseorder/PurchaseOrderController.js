@@ -173,12 +173,12 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         });
         console.log($scope.allPOsWithMaterialsList);
     }
-    this.$onInit = function () {
-        $scope.listAllMakes();
-        $scope.listAllMaterials();
-        $scope.listAllQuantities();
-        $scope.listAllCounterParties();
-        $scope.populateAllPOs();
+    this.$onInit = async function () {
+        await $scope.listAllMakes();
+        await $scope.listAllMaterials();
+        await $scope.listAllQuantities();
+        await $scope.listAllCounterParties();
+        await $scope.populateAllPOs();
     }
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
