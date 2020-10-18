@@ -163,6 +163,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
                 $scope.allPOsWithMaterialsList.push(obj);
             });
             console.log($scope.allPOsWithMaterialsList);
+            jq("#purchaseOrderTable").DataTable();
         }).catch(function(error){
             console.log("Error is --"+error);
         });
@@ -174,10 +175,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         await $scope.listAllCounterParties();
         await $scope.populateAllPOs();
     }
-
-    jq(document).ready(function () {
-        jq("#purchaseOrderTable").DataTable();
-    })
 };
 PurchaseOrderController.$inject = ["$scope","PurchaseOrderService","UtilitiesService"];
 myapp.controller("PurchaseOrderController",PurchaseOrderController);
