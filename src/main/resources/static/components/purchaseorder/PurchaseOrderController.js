@@ -178,6 +178,7 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         await $scope.listAllMaterials();
         await $scope.listAllQuantities();
         await $scope.listAllCounterParties();
+        await $scope.listAllPurchaseOrders();
         await $scope.populateAllPOs();
     }
 };
