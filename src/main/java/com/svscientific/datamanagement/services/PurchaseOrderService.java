@@ -31,8 +31,13 @@ public class PurchaseOrderService {
     }
 
     public List<PurchaseOrder> getAllPurchaseOrders(){
-        List<Orders> ordersList = orderRepository.findAllByPurchaseorderid("SV-2020-ABC");
-        logger.info("All purchaseorders by purchae orde id are {}",ordersList.toString());
         return purchaseOrderRepository.findAll();
+    }
+
+    public List<Orders> getAllOrdersByPurchaseOrderId(String purchaseOrderId){
+
+        List<Orders> ordersList = orderRepository.findAllByPurchaseorderid(purchaseOrderId);
+        logger.info("All purchaseorders by purchae orde id are {}",ordersList.toString());
+        return ordersList;
     }
 }

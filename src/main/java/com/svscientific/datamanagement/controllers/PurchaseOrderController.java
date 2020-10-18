@@ -4,10 +4,7 @@ import com.svscientific.datamanagement.models.Orders;
 import com.svscientific.datamanagement.models.PurchaseOrder;
 import com.svscientific.datamanagement.services.PurchaseOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Date;
 import java.util.Calendar;
@@ -40,5 +37,10 @@ public class PurchaseOrderController {
     @RequestMapping(value = "/getallpurchaseorders", method = RequestMethod.GET)
     public List<PurchaseOrder> allpurchaseorders(){
         return purchaseOrderService.getAllPurchaseOrders();
+    }
+
+    @RequestMapping(value = "/getallordersbypoid", method = RequestMethod.GET)
+    public List<Orders> allOrdersByPOID(@RequestParam("purchaseorderid") String purchaseorderid){
+        return purchaseOrderService.getAllOrdersByPurchaseOrderId(purchaseorderid);
     }
 }

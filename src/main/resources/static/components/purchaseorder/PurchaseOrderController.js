@@ -103,6 +103,39 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
 
     }
 
+    $scope.listAllOrders = function(){
+        PurchaseOrderService.listAllOrders().then(function(httpData){
+            console.log("HttpData :"+httpData.data);
+            $scope.allOrders = httpData.data;
+            console.log("All Orders are -- "+$scope.allMaterials);
+        }).catch(function(error){
+            console.log("Error is --"+error);
+        });
+
+    }
+
+    $scope.listAllOrdersByPOid = function(POId){
+        PurchaseOrderService.listAllOrdersByPOID(POId).then(function(httpData){
+            console.log("HttpData :"+httpData.data);
+            $scope.allOrdersOfPOid = httpData.data;
+            console.log("All Orders are -- "+$scope.allOrdersOfPOid);
+        }).catch(function(error){
+            console.log("Error is --"+error);
+        });
+
+    }
+
+    $scope.listAllPurchaseOrders = function(){
+        PurchaseOrderService.listAllPurchaseOrders().then(function(httpData){
+            console.log("HttpData :"+httpData.data);
+            $scope.allPurchaseOrders = httpData.data;
+            console.log("All Purchase orders are -- "+$scope.allMaterials);
+        }).catch(function(error){
+            console.log("Error is --"+error);
+        });
+
+    }
+
     $scope.listAllQuantities = function(){
         UtilitiesService.listAllQuantities().then(function(httpData){
             console.log("HttpData :"+httpData.data);

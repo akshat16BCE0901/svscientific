@@ -10,6 +10,17 @@ var PurchaseOrderService = function(HttpRequestService){
         return HttpRequestService.executeJsonPostRequest("/api/purchaseorder/saveorder",json);
     }
 
+    service.prototype.listAllOrders = function(){
+        return HttpRequestService.executeGetRequest("/api/purchaseorder/getallorders");
+    }
+    service.prototype.listAllPurchaseOrders = function(){
+        return HttpRequestService.executeGetRequest("/api/purchaseorder/getallpurchaseorders");
+    }
+
+    service.prototype.listAllOrdersByPOID = function(POId){
+        return HttpRequestService.executeGetRequest("/api/purchaseorder/getallordersbypoid?purchaseorderid="+POId);
+    }
+
 
     return new service();
 }
