@@ -11,7 +11,6 @@ var utilities = function($scope,UtilitiesService){
     $scope.abbreviation = "";
     $scope.counterpartyName = "";
     $scope.counterpartyEmail = "";
-    var jq = $.noConflict();
 
     $scope.listAllMakes = function(){
         UtilitiesService.listAllMakes().then(function(httpData){
@@ -121,11 +120,6 @@ var utilities = function($scope,UtilitiesService){
     $scope.listAllMaterials();
     $scope.listAllQuantities();
     $scope.listAllCounterParties();
-
-    window.onload = function () {
-        console.log("Window onload called");
-        jq('.datatable-class').DataTable();
-    };
 
 };
 utilities.$inject = ["$scope","UtilitiesService"];

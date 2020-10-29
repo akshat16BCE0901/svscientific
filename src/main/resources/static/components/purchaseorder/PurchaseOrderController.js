@@ -1,5 +1,4 @@
 var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesService){
-    var jq = $.noConflict();
     $scope.message="working";
     $scope.numrows= 0;
     $scope.rows = ["a"];
