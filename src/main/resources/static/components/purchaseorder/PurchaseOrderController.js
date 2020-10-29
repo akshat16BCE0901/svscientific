@@ -36,20 +36,6 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             window.alert("Purchase order ID cannot be empty");
         }
         else{
-            $scope.temporaryOrders.forEach(function(order){
-                order.purchaseorderid = $scope.purchaseorderid;
-            });
-            console.log($scope.temporaryOrders);
-
-            $scope.temporaryOrders.forEach(function(order){
-                PurchaseOrderService.addNewOrder(order)
-                    .then(function(response){
-                        console.log(response.data);
-                    }).catch(function(error){
-                    console.log("Error is --"+error);
-                });
-            });
-
             var POObject = {
                 "purchaseorderid" : $scope.purchaseorderid,
                 "counterparty" : {
@@ -59,6 +45,15 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
             PurchaseOrderService.addNewPurchaseOrder(POObject)
                 .then(function(response){
                     console.log(response.data);
+                    $scope.temporaryOrders.forEach(function(order){
+                        order.purchaseorderid = $scope.purchaseorderid;
+                        PurchaseOrderService.addNewOrder(order)
+                            .then(function(response){
+                                console.log(response.data);
+                            }).catch(function(error){
+                            console.log("Error is --"+error);
+                        });
+                    });
                 }).catch(function(error) {
                 console.log("Error is --" + error);
             });
