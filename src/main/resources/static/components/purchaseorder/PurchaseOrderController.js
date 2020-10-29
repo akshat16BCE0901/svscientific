@@ -83,6 +83,10 @@ var PurchaseOrderController = function($scope,PurchaseOrderService,UtilitiesServ
         $scope.addRowToTempTable(objToAdd);
     }
 
+    $scope.updateorder = function (order){
+        console.log("Order to be updated is ==== "+JSON.stringify(order));
+    }
+
     $scope.listAllMakes = function(){
         UtilitiesService.listAllMakes().then(function(httpData){
             console.log("HttpData :"+httpData.data);

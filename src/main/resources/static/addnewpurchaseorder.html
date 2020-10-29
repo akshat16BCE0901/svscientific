@@ -44,7 +44,7 @@
                                     <td><select ng-model="makeName">
                                         <option ng-repeat="x in allMakes" ng-value="{{x.id}}">{{x.name}}</option>
                                     </select></td>
-                                    <td><input ng-model="numitems" type="number" class="form-control" /></td>
+                                    <td><input ng-model="numitems" type="number" min="0" step="0.1" class="form-control" /></td>
                                     <td><select ng-model="quantity">
                                         <option ng-repeat="x in allQuantities" ng-value="{{x.id}}">{{x.name}}({{x.abbreviation}})</option>
                                     </select></td>

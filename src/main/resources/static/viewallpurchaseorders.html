@@ -1,4 +1,4 @@
-<div class="container-fluid mt-4 p-2">
+<div class="container-fluid mt-4">
     <div class="row">
         <div class="col-md-6 text-center"><button class="btn-lg btn-primary btn">View All</button></div>
         <div class="col-md-6 text-center"><button class="btn-lg btn-primary btn">View Pending</button></div>
@@ -47,6 +47,7 @@
                                         <th>Disc.</th>
                                         <th>HSN COde</th>
                                         <th>GST%</th>
+                                        <th>&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,6 +61,7 @@
                                         <td>{{order.disc}}</td>
                                         <td>{{order.hsncode}}</td>
                                         <td>{{order.gst}}</td>
+                                        <td><button class="btn btn-sm btn-primary" ng-click="updateorder(order)">Update</button></td>
                                     </tr>
                                 </tbody>
                             </table>
